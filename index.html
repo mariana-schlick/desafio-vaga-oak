@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio OAK</title>
+
+    <!-- Descrição do projeto para SEO -->
+    <meta name="description" content="Desafio de criação de CRUD para vaga de estágio Back-End na Empresa OAK. Desafio concluído utilizando JavaScript, CSS e HTML, com armazenamento em local storage, desenvolvendo uma aplicação Web totalmente funcional.">
+
+    <!-- Ícone da aba do navegador -->
+    <link rel="shortcut icon" type="favicon" href="./icon.png">
+
+    <!-- Arquivo CSS local -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Biblioteca Remixicon para ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"/>
+</head>
+<body>
+    <!-- Cabeçalho principal da página -->
+    <header class="header-container">
+        <!-- Parte esquerda do cabeçalho -->
+        <div class="header-left">
+            <h1>Teste Prático</h1>
+            <h2>Qualificação de Candidato</h2>
+            <p class="subtitle">Estágio de Desenvolvimento - Oak Tecnologia</p>
+        </div>
+
+        <!-- Parte direita do cabeçalho com a descrição do projeto -->
+        <div class="header-right">
+            <h3>Descrição do Projeto</h3>
+            <p>
+                Desafio de criação de um CRUD como parte do processo seletivo para a vaga de estágio Back-End na empresa OAK. O projeto foi desenvolvido utilizando JavaScript, CSS e HTML, com armazenamento de dados no Local Storage, garantindo a persistência das informações na aplicação. A solução resultou em uma aplicação web totalmente funcional, permitindo a criação, leitura, atualização e exclusão de dados. O foco esteve na implementação de uma interface amigável e responsiva, além de boas práticas de codificação, organização e estruturação do código.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contêiner principal da aplicação -->
+        <div class="container">
+            <!-- Cabeçalho interno do CRUD -->
+            <div class="header">
+                <span>Cadastro de Produtos</span>
+                <!-- Botão para abrir o modal de cadastro -->
+                <button onclick="openModal()" id="new">Cadastrar</button>
+            </div>
+
+            <!-- Tabela para exibição dos produtos cadastrados -->
+            <div class="div-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th> <!-- Coluna para o nome do produto -->
+                            <th>Descrição</th> <!-- Coluna para a descrição do produto -->
+                            <th onclick="sortTableByValue()">Valor</th> <!-- Coluna para o valor do produto, ordenável -->
+                            <th>Disponível</th> <!-- Coluna para a disponibilidade do produto -->
+                            <th class="acao">Editar</th> <!-- Coluna para ações de edição -->
+                            <th class="acao">Excluir</th> <!-- Coluna para ações de exclusão -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os dados serão dinamicamente adicionados aqui via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal para cadastro ou edição de produtos -->
+            <div class="modal-container">
+                <div class="modal">
+                    <form>
+                        <!-- Campo para o nome do produto -->
+                        <label for="m-nome">Nome</label>
+                        <input id="m-nome" type="text" required />
+
+                        <!-- Campo para a descrição do produto -->
+                        <label for="m-descricao">Descrição</label>
+                        <input id="m-descricao" type="text" required />
+
+                        <!-- Campo para o valor do produto -->
+                        <label for="m-valor">Valor</label>
+                        <input id="m-valor" type="number" required />
+
+                        <!-- Campo para a disponibilidade do produto -->
+                        <label for="m-disponivel">Disponível</label>
+                        <select id="m-disponivel">
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+
+                        <!-- Botão para salvar o cadastro ou edição -->
+                        <button id="btnsalvar">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Rodapé da página -->
+            <p>Criado por <a target="_blank" href="https://linktr.ee/mariana.schlickmann">Mariana Schlickmann</a><br>Desenvolvedora Web</p>
+            <p>Contato: <br><a target="_blank" href="https://www.linkedin.com/in/mariana-schlickmann/">LinkedIn</a></p>
+            <p>Portifolio: <br><a target="_blank" href=https://github.com/mariana-schlick>GitHub</a></p>
+    </footer>
+
+    <!-- Script JavaScript para funcionalidade da aplicação -->
+    <script src="script.js"></script>
+</body>
+</html>

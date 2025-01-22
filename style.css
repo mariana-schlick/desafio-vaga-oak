@@ -1,0 +1,370 @@
+/* Importação da fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Reset de margens, espaçamentos e box model padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+/* Definição de variáveis de cores e fonte para facilitar a reutilização */
+:root {
+    --primary-color: #0c093a;
+    --secondary-color: #badcfc;
+    --text-color: #FFFFFF;
+    --secondary-bg: #eeeeee;
+    --description-bg: #14537e;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo geral do cabeçalho principal */
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 2rem;
+    border-bottom-right-radius: 3rem;
+}
+
+/* Estilo do lado esquerdo do cabeçalho */
+.header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.header-left h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.header-left h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.header-left .subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--secondary-color);
+}
+
+/* Estilo do lado direito do cabeçalho */
+.header-right {
+    background: var(--description-bg);
+    padding: 1.5rem;
+    border-radius: 2rem;
+    text-align: left;
+}
+
+.header-right h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.header-right p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Responsividade para dispositivos com largura menor que 768px */
+@media (max-width: 768px) {
+    .header-container {
+        grid-template-columns: 1fr;
+    }
+
+    .header-left, .header-right {
+        text-align: center;
+    }
+
+    .header-right {
+        margin-top: 2rem;
+    }
+
+    .header-left h1 {
+        font-size: 2rem;
+    }
+
+    .header-left h2 {
+        font-size: 1.25rem;
+    }
+
+    .header-right h3 {
+        font-size: 1.25rem;
+    }
+
+    .header-right p {
+        font-size: 0.875rem;
+    }
+}
+
+/* Estilo para a área principal */
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-color);
+}
+
+/* Estilo para barra de rolagem personalizada */
+::-webkit-scrollbar-track {
+    background-color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    background: var(--text-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-bg);
+}
+
+/* Estilo para botões */
+button {
+    cursor: pointer;
+}
+
+/* Container principal */
+.container {
+    margin-top: -5rem;
+    width: 90%;
+    height: 80%;
+    border-radius: 0.625rem;
+    background: var(--text-color);
+}
+
+/* Header interno do container */
+.header {
+    min-height: 4.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0.75rem;
+    padding: 1rem;
+}
+
+.header span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    word-break: break-word;
+    color: var(--description-bg);
+}
+
+/* Botão de adicionar novo item */
+#new {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 0.3125rem;
+    border: none;
+    color: var(--text-color);
+    background-color: var(--description-bg);
+    transition: background-color 0.3s ease;
+}
+
+#new:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+/* Estilo da tabela */
+.div-table {
+    padding: 0.625rem;
+    width: auto;
+    height: inherit;
+    overflow: auto;
+    background-color: var(--secondary-bg);
+    border-radius: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.625rem;
+    text-align: left;
+}
+
+/* Colunas com larguras específicas */
+th:nth-child(1), td:nth-child(1) {
+    width: 20%;
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 40%;
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 15%;
+}
+
+th:nth-child(4), td:nth-child(4) {
+    width: 10%;
+}
+
+th:nth-child(5), td:nth-child(5),
+th:nth-child(6), td:nth-child(6) {
+    width: 7%;
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+tr {
+    border-bottom: 1px solid var(--secondary-bg) !important;
+}
+
+tbody tr td {
+    vertical-align: top;
+    padding: 0.375rem;
+}
+
+thead tr th {
+    padding: 0.3125rem;
+    text-align: start;
+}
+
+/* Responsividade da tabela */
+@media (max-width: 700px) {
+    body {
+        font-size: 0.625rem;
+    }
+
+    .header span {
+        font-size: 0.9375rem;
+    }
+
+    #new {
+        padding: 0.3125rem;
+        font-size: 0.625rem;
+    }
+}
+
+/* Estilo para o modal */
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(35, 20, 91, 0.5);
+    display: none;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    background-color: var(--text-color);
+    border-radius: 0.625rem;
+    width: 50%;
+}
+
+.modal label {
+    font-size: 0.875rem;
+    width: 100%;
+}
+
+.modal input {
+    width: 100%;
+    outline: none;
+    padding: 0.3125rem 0.625rem;
+    margin-bottom: 1.25rem;
+    border: none;
+    border-bottom: 1px solid var(--secondary-bg);
+}
+
+.modal button {
+    width: 100%;
+    margin: 0.625rem auto;
+    outline: none;
+    border-radius: 1.25rem;
+    padding: 0.3125rem 0.625rem;
+    border: none;
+    background-color: var(--description-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+}
+
+.active {
+    display: flex;
+}
+
+.active .modal {
+    animation: modal 0.4s;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -3.75rem, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+td button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+td button i {
+    font-size: 1.5625rem;
+}
+
+td button i:first-child {
+    margin-right: 0.625rem;
+}
+
+footer {
+    height: 10rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6rem;
+    background-color: var(--primary-color);
+}
+
+footer a {
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
